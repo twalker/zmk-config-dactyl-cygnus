@@ -18,6 +18,7 @@
 #define NAV     2
 #define NUM     3
 #define WIN     4
+#define MSE     5
 
 &lt {
   quick_tap_ms = <200>;
@@ -96,7 +97,7 @@
            &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SQT
            &hm LCTRL A &hs LALT R &hm LGUI S &hf LSHFT T &kp G   &kp M &hf RSHFT N  &hm RGUI E &hs LALT I &hm RCTRL O
            &lt NUM Z  &kp X &kp C  &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &lt WIN FSLH
-                        &mo NUM &lt SYM ESC &lt NAV BSPC &lt NAV SPACE &kp RET &mo WIN
+                        &mo NUM &lt SYM ESC &lt NAV BSPC &lt NAV SPACE &lt MSE RET &mo WIN
        >;
        };
 
@@ -154,6 +155,20 @@
          &none &none &kp C_VOL_DN &kp C_MUTE &bt BT_SEL 2                    &none &kp LG(MINUS) &none &kp LC(LA(MINUS)) &none
                         &trans     &trans      &trans       &trans        &trans      &trans
       >;
+      };
+
+      mse_layer {
+// ----------------------------------------------------------------------------
+// |    |     |     | UP  |     |     |   | SPD | WHUP|     |     |     |     |
+// |    |     | LEFT|DOWN |RIGHT|     |   | WHL | BTN1| BTN2| BTN3| WHR |     |
+// |    |     |     |     |     |     |   |     | WHDN|     |     |     |     |
+//                       |     |     |     |    |     |
+                        bindings = <
+        &none     &none &mmv MOVE_UP &none     &none         &ball_speed     &msc SCRL_UP    &none     &none     &none
+        &none     &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none         &msc SCRL_LEFT &mkp MB1 &mkp MB2 &mkp MB2 &msc SCRL_RIGHT
+        &none     &none     &none     &none     &none         &none     &msc SCRL_DOWN    &none     &none     &none
+                              &trans    &kp LCTRL &kp LSHFT     &trans    &trans   &trans
+                        >;
       };
    };
 };
