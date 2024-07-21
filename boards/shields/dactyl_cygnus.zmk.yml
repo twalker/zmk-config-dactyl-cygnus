@@ -1,0 +1,14 @@
+file_format: "1"
+id: dactyl_cygnus
+name: DactylCygnus
+type: shield
+url: https://github.com/juhakaup/keyboards/tree/main/Cygnus%20v1.0
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - underglow
+siblings:
+  - dactyl_cygnus_left
+  - dactyl_cygnus_right
