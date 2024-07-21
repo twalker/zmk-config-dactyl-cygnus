@@ -9,11 +9,13 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-        keymap {
-                chosen {
-                    zmk,physical-layout = &five_column_layout;
-                };
+  chosen {
+    zmk,matrix_transform = &five_column_transform;
+  };
+};
 
+/ {
+        keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
