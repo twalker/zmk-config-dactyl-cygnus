@@ -53,6 +53,14 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
       };
+      bhm: balanced_homerow_mods {
+          compatible = "zmk,behavior-hold-tap";
+          #binding-cells = <2>;
+          tapping-term-ms = <150>;    // <---[[moderate duration]]
+          quick-tap-ms = <0>;
+          flavor = "balanced";
+          bindings = <&kp>, <&kp>;
+      };
     };
 
     combos {
@@ -90,7 +98,7 @@
       default_layer {
         bindings = <
           &kp Q &kp W &kp F &kp P &kp B   &kp J &kp L  &kp U     &kp Y   &kp SQT
-          &hm LCTRL A &hs LALT R &hm LGUI S &hf LSHFT T &kp G   &kp M &hf RSHFT N  &hm RGUI E &hs LALT I &hm RCTRL O
+          &bhm LCTRL A &bhm LALT R &bhm LGUI S &bhm LSHFT T &kp G   &kp M &bhm RSHFT N  &bhm RGUI E &bhm LALT I &bhm RCTRL O
           &lt NUM Z  &kp X &kp C  &kp D &kp V   &kp K &kp H  &kp COMMA &kp DOT &lt WIN FSLH
                         &mo NUM &lt SYM ESC &lt NAV BSPC &lt NAV SPACE &lt MSE RET &mo WIN
         >;
